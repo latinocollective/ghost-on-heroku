@@ -1,0 +1,31 @@
+routes:
+  /signup/:
+    template: members/signup
+    data: page.signup
+  /signin/:
+    template: members/signin
+    data: page.signin
+  /membership/:
+    template: members/membership
+    data: page.membership
+  /account/:
+    template: members/account
+    data: page.account
+
+collections:
+  /:
+    permalink: /{slug}/
+    template: index
+    filter: 'tag:-[hash-es,hash-pt]'
+  /es/:
+    permalink: /es/{slug}/
+    template: index-es
+    filter: 'tag:hash-es'
+  /pt/:
+    permalink: /pt/{slug}/
+    template: index-pt-br
+    filter: 'tag:hash-pt'
+
+taxonomies:
+  tag: /tag/{slug}/
+  author: /designer/{slug}/
